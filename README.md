@@ -31,7 +31,7 @@ Each password will generate a separate file instead of being in the same file.
 
 ### url.txt
 
-The same as password.txt,this file need be filled with your trojan address,fill in one password per line.
+The same as password.txt,this file need be filled with your trojan address,fill in one address per line.
 
 Example:
 
