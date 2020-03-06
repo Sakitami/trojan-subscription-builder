@@ -26,7 +26,7 @@ if os.path.isfile("password.txt") and os.path.isfile("url.txt"):
         n += 1
     print("Created,building subscription file...")
 else:
-    print("No password.txt or url.txt found,please check the directory")
+    print("No password.txt or url.txt found,please check the directory.")
     exit()
 
 
