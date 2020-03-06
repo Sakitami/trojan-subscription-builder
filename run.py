@@ -27,16 +27,23 @@ if os.path.isfile("password.txt") and os.path.isfile("url.txt"):
     print("Created,building subscription file...")
 else:
     print("No password.txt or url.txt found,please check the directory.")
-    exit()
+    while True:
+        print('Press Enter to exit...')
+        exitkey = input()
+        if exitkey == "Y":
+            exit()
+        else:
+            exit()
 
 
 ## Build subscription file
 r = -1
+print('-'*8)
 for i in range(0,len(passline)):
     urlist = []
     r += 1
     num = 0
-    print("Creating " + passline[r] + "'s subscription file...")
+    print("Creating " + passline[r] + "'s subscription file...", end='')
     for j in range(len(urlline)):
         trourl = "trojan://" + passline[r] + "@" + urlline[num]
         urlist.append(trourl)
@@ -46,3 +53,12 @@ for i in range(0,len(passline)):
     subfile = open(passline[r],"a")
     subfile.write(encryption)
     subfile.close()
+    print('Done')
+print('-'*8 + "\n" + 'All done, please check the subscription directory.')
+while True:
+    print('Press Enter to exit...')
+    exitkey = input()
+    if exitkey == "Y":
+        exit()
+    else:
+        exit()
