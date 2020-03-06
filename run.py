@@ -19,8 +19,15 @@ if os.path.isfile("password.txt") and os.path.isfile("url.txt"):
         os.mkdir("subscription")
         os.chdir("subscription")
     n = 0
-    for i in range(0,len(passline)):
+    ## Determine whether to use html suffix
+    print("Do you want to use .html ?", end='')
+    htmlkey = input("[Y/n]:")
+    if htmlkey == "Y":
+        sub_name = passline[n] + '.html'
+    else:
         sub_name = passline[n]
+    ## Create files
+    for i in range(0,len(passline)):
         subfile = open(sub_name, "w+")
         subfile.close
         n += 1
@@ -48,9 +55,14 @@ for i in range(0,len(passline)):
         trourl = "trojan://" + passline[r] + "@" + urlline[num]
         urlist.append(trourl)
         num += 1
+    ## Use base64 encode and write into files
     trojanlist = "\n".join(urlist)
     encryption = str(base64.b64encode(trojanlist.encode()), encoding = "utf-8")
-    subfile = open(passline[r],"a")
+    ## Check the if html suffix used
+    if htmlkey == "Y":
+        subfile = open(passline[r] + '.html',"a")
+    else:
+        subfile = open(passline[r], "a")
     subfile.write(encryption)
     subfile.close()
     print('Done')
