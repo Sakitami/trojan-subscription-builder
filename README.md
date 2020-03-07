@@ -23,7 +23,7 @@ Next,the program will ask you if you want to use ".html" suffix.
 Do you want to use .html ?[Y/n]:
 ```
 
-Press "Y" will cteate xxx.html files.
+Press "Y" will create xxx.html files.
 
 Finally, you will found subscription files in "subscription" directory.
 
