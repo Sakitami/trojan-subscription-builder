@@ -3,9 +3,9 @@ A Mini Python Program to Build Trojan Subscription file.
 
 ---
 
-**Attention: You need to run this program with python3.**
-
 ### Useage
+
+**Attention: You need to run this program with python3.**
 
 To use it,just run "run.py".
 
