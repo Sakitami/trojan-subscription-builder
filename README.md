@@ -9,7 +9,7 @@ A Mini Python Program to Build Trojan Subscription file.
 
 To use it,just run "run.py".
 
-For mac, you need install python3 via terminal.
+For mac, you need install python3 via terminal.Then use python3 to run it.
 
 ```
 python3 run.py
@@ -28,6 +28,8 @@ Press "Y" will create xxx.html files.
 Finally, you will found subscription files in "subscription" directory.
 
 Before using it, you need to ensure that "password.txt" and "url.txt" exist in its siblings, and write them as required.
+
+---
 
 ### password.txt
 
