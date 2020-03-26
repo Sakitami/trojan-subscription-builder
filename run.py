@@ -66,7 +66,7 @@ for i in range(0,len(passline)):
     subfile.write(encryption)
     subfile.close()
     print('Done')
-print('-'*8 + "\n" + 'All done, please check the subscription directory.')
+print('-'*8 + "\r\n" + 'All done, please check the subscription directory.')
 while True:
     print('Press Enter to exit...')
     exitkey = input()
