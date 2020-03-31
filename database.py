@@ -4,7 +4,7 @@ import os
 
 
 ## Load source file
-dir = os.getcwd()
+dirname = os.getcwd()
 if os.path.isfile("password.txt") and os.path.isfile("url.txt"):
     print("Found source file,trying to load it...")
     ## Read dictionary file password.txt and url.txt
@@ -73,7 +73,7 @@ print('-'*8 + "\n" + 'All done, please check the subscription directory.')
 
 a = input(u"Do you want to upload those to server?[Y/n]:")
 if a == "Y":
-    os.chdir(dir)
+    os.chdir(dirname)
     os.system("ftp.py")
 
 while True:
