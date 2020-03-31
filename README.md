@@ -72,3 +72,21 @@ url2:443
 .
 .
 ```
+
+---
+
+If Use Trojan-Panel,you can run "database.py",before run it ,you should create a new file named "username.txt",format sits the same as them.
+
+Before using it, you need to ensure that "password.txt","url.txt","config.cfg" and "ftp.py" exist in its siblings, and write them as required.
+
+### config.cfg
+
+```
+[FTP]
+
+server = 127.0.0.1
+port = 21
+user = users
+password = password
+dir = /path/to/sub/dir
+```
