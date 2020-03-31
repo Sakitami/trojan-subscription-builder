@@ -21,7 +21,7 @@ try:
     ftp.connect(serverip,port)
     ftp.login(username,password)
     bufsize = 1024
-    ftp.cwd("/" + dirname)
+    ftp.cwd(dirname)
     print("Connected to the server!")
 except:
     print("Connect failed!")
