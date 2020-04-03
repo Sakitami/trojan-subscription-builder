@@ -12,8 +12,6 @@ if os.path.isfile("password.txt") and os.path.isfile("url.txt"):
     	passline = password.read().splitlines()
     with open('url.txt','r', encoding='UTF-8') as url:
     	urlline = url.read().splitlines()
-    with open('username.txt','r', encoding='UTF-8') as username:
-    	username = username.read().splitlines()
     print("Loaded sorce file,creating original file...")
     ## Create a new directory and original files
     if os.path.isdir("subscription"):    
@@ -55,7 +53,7 @@ for i in range(0,len(passline)):
     num = 0
     print("Creating " + passline[r] + "'s subscription file...", end='')
     for j in range(len(urlline)):
-        trourl = "trojan://" + username[r] + ":" + passline[r] + "@" + urlline[num]
+        trourl = "trojan://" + passline[r] + "@" + urlline[num]
         urlist.append(trourl)
         num += 1
     ## Use base64 encode and write into files

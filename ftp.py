@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import configparser
 from ftplib import FTP
 import time
@@ -13,7 +14,7 @@ username = conf.get("FTP", "user")
 password = conf.get("FTP", "password")
 dirname = conf.get("FTP", "dir")
 list_file = os.listdir("subscription")
-print("Load config success! \n Connecting to the server...")
+print("Load config success! \nConnecting to the server...")
 
 # Connect to Server
 try:
@@ -21,8 +22,12 @@ try:
     ftp.connect(serverip,port)
     ftp.login(username,password)
     bufsize = 1024
-    ftp.cwd(dirname)
     print("Connected to the server!")
+    try:
+        ftp.cwd(dirname)
+        print("Changed to the working directory:"+ dirname)
+    except:
+        print("Cheange the work directory failed.Use default settings.\n"+ '-'*8)
 except:
     print("Connect failed!")
     exit()
@@ -43,7 +48,7 @@ if a == "YES":
             faild1 += 1
     failed1 = str(failed1)
     success1 = str(success1)
-    print("All Done,deleted " + success1 + " files, " + failed1 + " files not be deleted.")
+    print("All Done,deleted " + success1 + " files, " + failed1 + " files not be deleted.\n"+'-'*8)
 
 # Upload Files
 os.chdir("subscription")
@@ -57,9 +62,9 @@ for i in list_file:
     except:
         print(i + "....Failed")
         failed2 += 1
-    failed2 = str(failed2)
-    success2 = str(success2)
-    print("All Done,upload " + success2 + " files, " + failed2 + " files not be uploaded.")
+failed2 = str(failed2)
+success2 = str(success2)
+print("All Done,upload " + success2 + " files, " + failed2 + " files not be uploaded.")
 
 fp.close()
 ftp.quit()
