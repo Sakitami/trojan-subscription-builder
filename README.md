@@ -17,7 +17,13 @@ python3 run.py
 
 If the required file exists,the program will be run.
 
-Next,the program will ask you if you want to use ".html" suffix.
+Next, just follow the prompts.
+
+Compared to "common","database" will use "username.txt".
+
+---
+
+## Common and Database mode
 
 ```
 Do you want to use .html ?[Y/n]:
@@ -28,6 +34,12 @@ Press "Y" will create xxx.html files.
 Finally, you will found subscription files in "subscription" directory.
 
 Before using it, you need to ensure that "password.txt" and "url.txt" exist in its siblings, and write them as required.
+
+---
+
+## Add a user to mysql database
+
+With this mode, you can add new trojan password.
 
 ---
 
@@ -89,4 +101,11 @@ port = 21
 user = users
 password = password
 dir = /path/to/sub/dir
+
+[Mysql]
+
+dbserver = 0.0.0.0
+dbname = trojan
+username = trojan
+password = password 
 ```
