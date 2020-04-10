@@ -30,10 +30,11 @@ try:
         print("Cheange the work directory failed.Use default settings.\n"+ '-'*8)
 except:
     print("Connect failed!")
-    exit()
+    a = input("Press Enter to go back.")
+    exit() if a == "Y" else exit()
 
 # Delete Files
-a = input(u"Do You want to Delete all the files?[n/YES]")
+a = input(u"Do You want to Delete ALL the files?[n/YES]")
 if a == "YES":
     failed1 = success1 = 0
     del_files = ftp.nlst()
@@ -45,12 +46,13 @@ if a == "YES":
             success1 += 1
         except:
             print(i + "....Failed")
-            faild1 += 1
+            failed1 += 1
     failed1 = str(failed1)
     success1 = str(success1)
-    print("All Done,deleted " + success1 + " files, " + failed1 + " files not be deleted.\n"+'-'*8)
+    print("All Done,deleted ", success1, " files, ", failed1, " files not be deleted.\n", '-'*8)
 
 # Upload Files
+print("Start uploading files...")
 os.chdir("subscription")
 failed2 = success2 = 0
 for i in list_file:
@@ -64,7 +66,10 @@ for i in list_file:
         failed2 += 1
 failed2 = str(failed2)
 success2 = str(success2)
-print("All Done,upload " + success2 + " files, " + failed2 + " files not be uploaded.")
+print("All Done,upload ", success2, " files, ", failed2, " files not be uploaded.")
 
 fp.close()
 ftp.quit()
+
+a = input("Press Enter to go back.")
+exit() if a == "Y" else exit()
