@@ -40,10 +40,7 @@ else:
     while True:
         print('Press Enter to exit...')
         exitkey = input()
-        if exitkey == "Y":
-            exit()
-        else:
-            exit()
+        exit() if exitkey == "Y" else exit()
 
 
 ## Build subscription file
@@ -79,7 +76,4 @@ if a == "Y":
 while True:
     print('Press Enter to exit...')
     exitkey = input()
-    if exitkey == "Y":
-        exit()
-    else:
-        exit()
+    exit() if exitkey == "Y" else exit()
