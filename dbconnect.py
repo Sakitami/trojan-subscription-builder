@@ -71,6 +71,7 @@ if a == "Y":
         add_user_limit *= 1048576
         adduser(add_user_name, add_user_passwd, add_user_limit)
     print("All done!")
+    db.close()
 
 a = input("Press Enter to go back.")
 exit() if a == "Y" else exit()
