@@ -69,7 +69,7 @@ print('-'*8 + "\n" + 'All done, please check the subscription directory.')
 a = input(u"Do you want to upload those to server?[Y/n]:")
 if a == "Y":
     os.chdir(dirname)
-    os.system("ftp.py")
+    os.system("python ftp.py")
 
 while True:
     print('Press Enter to exit...')
