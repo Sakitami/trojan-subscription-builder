@@ -14,7 +14,7 @@ if os.path.isfile("password.txt") and os.path.isfile("url.txt"):
     	urlline = url.read().splitlines()
     print("Loaded sorce file,creating original file...")
     ## Create a new directory and original files
-    if os.path.isdir("subscription"):    
+    if os.path.isdir("subscription"):
         os.chdir("subscription")
     else:
         os.mkdir("subscription")
@@ -74,4 +74,4 @@ if a == "Y":
 while True:
     print('Press Enter to exit...')
     exitkey = input()
-    exit()if exitkey == "Y" else exit()
+    exit() if exitkey == "Y" else exit()
