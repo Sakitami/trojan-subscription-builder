@@ -7,13 +7,9 @@ A Mini Python Program to Build Trojan Subscription file.
 
 **Attention: You need to run this program with python3.**
 
-To use it,just run "run.py".
+To use it,just run "run.py".(In Unix/Linux,you can  use `./run`.)
 
 For mac, you need install python3 via terminal.Then use python3 to run it.
-
-```
-python3 run.py
-```
 
 If the required file exists,the program will be run.
 
