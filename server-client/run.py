@@ -19,3 +19,4 @@ while True:
         print("Wrong config.Please check settings.")
         break
     time.sleep(sleep_time)
+sys.exit()

@@ -31,25 +31,22 @@ try:
 except:
     print("Connect failed!")
     a = input("Press Enter to go back.")
-    exit() if a == "Y" else exit()
+    exit()
 
 # Delete Files
-a = input(u"Do You want to Delete ALL the files?[n/YES]")
-if a == "YES":
-    failed1 = success1 = 0
-    del_files = ftp.nlst()
-    print(del_files)
-    for i in del_files:
-        try:
-            ftp.delete(i)
-            print(i + "....Delected")
-            success1 += 1
-        except:
-            print(i + "....Failed")
-            failed1 += 1
-    failed1 = str(failed1)
-    success1 = str(success1)
-    print("All Done,deleted ", success1, " files, ", failed1, " files not be deleted.\n", '-'*8)
+failed1 = success1 = 0
+del_files = ftp.nlst()
+print("Start deleteing files...")
+print(del_files)
+for i in del_files:
+    try:
+        ftp.delete(i)
+        success1 += 1
+    except:
+        failed1 += 1
+failed1 = str(failed1)
+success1 = str(success1)
+print("All Done,deleted ", success1, " files, ", failed1, " files not be deleted.\n", '-'*8)
 
 # Upload Files
 print("Start uploading files...")
@@ -59,10 +56,8 @@ for i in list_file:
     try:
         fp = open(i,'rb')
         ftp.storbinary('STOR ' + i, fp,bufsize)
-        print(i + "....Uploaded")
         success2 += 1
     except:
-        print(i + "....Failed")
         failed2 += 1
 failed2 = str(failed2)
 success2 = str(success2)
@@ -70,6 +65,4 @@ print("All Done,upload ", success2, " files, ", failed2, " files not be uploaded
 
 fp.close()
 ftp.quit()
-
-a = input("Press Enter to go back.")
-exit() if a == "Y" else exit()
+exit()
