@@ -7,6 +7,7 @@ conf = configparser.ConfigParser()
 conf.read('config.cfg')
 mode = conf.get("Settings", "mode")
 sleep_time = conf.getint("Settings", "cycle")
+mysql = conf.get("Settings", "mysql")
 print('\nWelcome to Trojan Subscription Builder\n\033[1;35mversion 0.1\033[0m\n','-'*8)
 while True:
     if mode == 'common':
@@ -18,5 +19,7 @@ while True:
     else:
         print("Wrong config.Please check settings.")
         break
+    if mysql == 1:
+        os.system('python myssql.py')
     time.sleep(sleep_time)
 sys.exit()
