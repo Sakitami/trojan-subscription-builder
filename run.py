@@ -22,6 +22,6 @@ while True:
         os.chdir(dirname)
         os.system("python dbconnect.py")
     elif a == "4":
-        sys.exit()
+        os.exit()
     else:
         print("Invalid input, please try again")
