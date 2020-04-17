@@ -15,15 +15,15 @@ dbpass = conf.get("Mysql", "password")
 
 def adduser(username,password,limit):
     username = str(username)
-    password = str(passowrd)
+    password = str(password)
     limit = str(limit)
     pd_sha224 = hashlib.sha224()
     pd_sha224.update(password.encode("UTF-8"))
     pd = str(pd_sha224.hexdigest())
     command = "insert into users (username, password, quota) values(" + '"' + username + '", ' + '"' + pd + '", ' + limit + ');'
-    cursor = db.sursor()
-    sursor.execute(command)
-    sursor.close()
+    cursor = db.cursor()
+    cursor.execute(command)
+    cursor.close()
     db.commit()
 
 # Connect to Mysql server
