@@ -45,7 +45,7 @@ if os.path.isfile("password.txt"): # and os.path.isfile("url.txt"):
     ## Create files
     n = 0
     for i in range(0,len(passline)):
-        passline_clash = passline[n] + '-clash.yml'
+        passline_clash = passline[n] + '-clash.yaml'
         shutil.copy('origin.yaml', passline_clash)
         n += 1
     print("Created,building subscription file...")
@@ -62,7 +62,7 @@ print('-'*8)
 for i in range(0,len(passline)):
     r += 1
     print("Creating " + passline[r] + "'s subscription file...", end='')
-    passline_clash = passline[r] + '-clash.yml'
+    passline_clash = passline[r] + '-clash.yaml'
     alter(passline_clash,"{{passwd}}",passline[r])
     print('Done')
 print('-'*8 + "\n" + 'All done, please check the subscription directory.')
