@@ -23,6 +23,7 @@ if os.path.isfile("password.txt"): # and os.path.isfile("url.txt"):
     with open('password.txt','r') as password:
     	passline = password.read().splitlines()
     print("Loaded sorce file,creating original file...")
+    origin_addr = os.getcwd()
     temp_addr = os.getcwd() + '/templates/temp.yaml'
     ## Create a new directory and original files
     if os.path.isdir("subscription"):
@@ -68,7 +69,7 @@ print('-'*8 + "\n" + 'All done, please check the subscription directory.')
 
 a = input(u"Do you want to upload those to server?[Y/n]:")
 if a == "Y":
-    os.chdir(dirname)
+    os.chdir(origin_addr)
     os.system("python ftp.py")
 
 while True:
