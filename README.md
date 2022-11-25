@@ -3,7 +3,7 @@ A Mini Python Program to Build Trojan Subscription file.
 
 ---
 
-### Useage
+### Usage
 
 **Attention: You need to run this program with python3.**
 
